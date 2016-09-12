@@ -1,6 +1,8 @@
 ansible-role-tree
 =================
 
+[![Build Status](https://travis-ci.org/nephelaiio/ansible-role-tree.svg?branch=master)](https://travis-ci.org/nephelaiio/ansible-role-tree)
+
 An ansible role to install and configure the tree command line utility 
 
 Requirements

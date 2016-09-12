@@ -1,0 +1,22 @@
+---
+# see http://molecule.readthedocs.io/en/stable-1.9/usage.html
+language: python
+
+sudo: required
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+
+install:
+  # Install ansible
+  - pip install ansible molecule
+
+script:
+  # Basic role syntax check
+  - cd ansible-role-tree
+  - molecule test
+
+# see http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations
+#notifications:
+#  webhooks: https://galaxy.ansible.com/api/v1/notifications/

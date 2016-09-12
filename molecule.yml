@@ -1,0 +1,36 @@
+---
+driver:
+  name: docker
+
+docker:
+  containers:
+      - name: ansible-tree-jessie
+        image: debian
+        image_version: jessie
+        ansible_groups:
+          - tree-debian
+      - name: ansible-tree-xenial
+        image: ubuntu
+        image_version: xenial
+        ansible_groups:
+          - tree-ubuntu
+      - name: ansible-tree-centos6
+        image: centos
+        image_version: 6
+        ansible_groups:
+          - tree-centos
+      - name: ansible-tree-centos7
+        image: centos
+        image_version: 7
+        ansible_groups:
+          - tree-centos
+      - name: ansible-tree-arch
+        image: pritunl/archlinux
+        image_version: latest
+        dockerfile: docker/arch.dockerfile
+        ansible_groups:
+          - tree-arch
+        command: /bin/bash
+
+verifier:
+  name: testinfra

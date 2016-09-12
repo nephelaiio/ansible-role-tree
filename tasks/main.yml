@@ -1,0 +1,28 @@
+---
+# Include variable definitions
+- name: "include variable overrides"
+  include_vars: "{{ item }}"
+  with_first_found:
+    - "vars/{{ ansible_distribution }}-{{ ansible_distribution_major_version }}.yml"
+    - "vars/{{ ansible_distrubition }}.yml"
+    - "vars/{{ ansible_os_family }}.yml"
+  tags:
+    - tree
+
+# Install packages
+- name: install tree packages
+  package: name="{{ tree_packages }}" state="{{ tree_packages_state }}"
+  become: yes
+  tags:
+    - tree
+
+# Set up configuration file
+- name: configure tree
+  template: >
+    src=tree_conf_template
+    dest="{{ tree_conf_path }}"
+  become: no
+  when: tree_conf_path is defined
+  tags:
+    - tree
+    - tree_conf

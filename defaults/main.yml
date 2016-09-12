@@ -1,0 +1,6 @@
+---
+# User variables for role
+tree_packages: tree
+tree_packages_state: present
+tree_conf_template: tree.conf
+# tree_conf_path: /etc/tree/tree.conf

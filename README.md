@@ -1,7 +1,7 @@
-Role Name
-=========
+ansible-role-tree
+=================
 
-An ansible role to install and configure tree
+An ansible role to install and configure the tree command line utility 
 
 Requirements
 ------------

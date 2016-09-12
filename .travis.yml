@@ -5,12 +5,9 @@ language: python
 sudo: required
 
 install:
-  # Install ansible
   - pip install ansible molecule
 
 script:
-  # Basic role syntax check
-  - cd ansible-role-tree
   - molecule test
 
 # see http://docs.ansible.com/ansible/galaxy.html#setup-travis-integrations

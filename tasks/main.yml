@@ -15,14 +15,3 @@
   become: yes
   tags:
     - tree
-
-# Set up configuration file
-- name: configure tree
-  template: >
-    src=tree_conf_template
-    dest="{{ tree_conf_path }}"
-  become: no
-  when: tree_conf_path is defined
-  tags:
-    - tree
-    - tree_conf

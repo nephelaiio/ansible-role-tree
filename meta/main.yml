@@ -9,13 +9,17 @@ galaxy_info:
   platforms:
   - name: EL
     versions:
-    - all
+      - 6
+      - 7
   - name: Ubuntu
     versions:
-    - all
+      - xenial
   - name: Debian
     versions:
-    - all
+      - jessie
+  - name: Archlinux
+    versions:
+      - all
 
   galaxy_tags:
     - tree

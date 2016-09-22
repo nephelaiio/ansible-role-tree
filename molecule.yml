@@ -33,4 +33,4 @@ docker:
         command: /bin/bash
 
 verifier:
-  name: testinfra
+  name: serverspec

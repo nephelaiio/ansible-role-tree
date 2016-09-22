@@ -7,15 +7,17 @@ sudo: required
 services:
   - docker
 
+rvm:
+  - 2.2
+
 addons:
   apt:
     packages:
       - vagrant
-      - ruby
-      - ruby-bundler
 
 install:
   - pip install -r requirements.txt
+  - gem install bundler
   - bundle install
 
 script:

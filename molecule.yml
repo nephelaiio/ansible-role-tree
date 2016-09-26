@@ -8,27 +8,27 @@ docker:
         image: debian
         image_version: jessie
         ansible_groups:
-          - specs
+          - test
       - name: ansible-tree-xenial
         image: ubuntu
         image_version: xenial
         ansible_groups:
-          - specs
-      - name: ansible-tree-centos6
-        image: centos
-        image_version: 6
-        ansible_groups:
-          - specs
+          - test
       - name: ansible-tree-centos7
         image: centos
         image_version: 7
         ansible_groups:
-          - specs
+          - test
       - name: ansible-tree-arch
         image: pritunl/archlinux
         image_version: latest
         dockerfile: docker/arch.dockerfile
         command: /bin/bash
+        ansible_groups:
+          - test
+
+#ansible:
+#  requirements_file: dependencies.yml
 
 verifier:
-  name: serverspec
+  name: testinfra

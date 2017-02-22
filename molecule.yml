@@ -1,34 +1,40 @@
+# vim: sw=2 ts=2 et :
 ---
 driver:
   name: docker
 
 docker:
   containers:
-      - name: ansible-tree-jessie
-        image: debian
-        image_version: jessie
-        ansible_groups:
-          - test
-      - name: ansible-tree-xenial
-        image: ubuntu
-        image_version: xenial
-        ansible_groups:
-          - test
-      - name: ansible-tree-centos7
-        image: centos
-        image_version: 7
-        ansible_groups:
-          - test
-      - name: ansible-tree-arch
-        image: pritunl/archlinux
-        image_version: latest
-        dockerfile: docker/arch.dockerfile
-        command: /bin/bash
-        ansible_groups:
-          - test
+    - name: ansible-tree-jessie
+      image: debian
+      image_version: jessie
+      ansible_groups:
+        - test
+    - name: ansible-tree-xenial
+      image: ubuntu
+      image_version: xenial
+      ansible_groups:
+        - test
+    - name: ansible-tree-centos7
+      image: centos
+      image_version: 7
+      ansible_groups:
+        - test
+    - name: ansible-tree-arch
+      image: pritunl/archlinux
+      image_version: latest
+      dockerfile: docker/arch.dockerfile
+      command: /bin/bash
+      ansible_groups:
+        - test
 
-#ansible:
-#  requirements_file: dependencies.yml
+molecule:
+  ignore_paths:
+    - .git
+    - .ropeproject
+    - .molecule
 
 verifier:
   name: testinfra
+  options:
+    ignore: roles

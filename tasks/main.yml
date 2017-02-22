@@ -1,9 +1,10 @@
+# vim: sw=2 ts=2 et :
 ---
 # Install packages
 - name: install tree packages
-  package: >
-    name="{{ tree_packages }}"
-    state="{{ tree_packages_state }}"
+  package:
+    name: "{{ tree_packages }}"
+    state: "{{ tree_packages_state }}"
   become: yes
   tags:
     - tree

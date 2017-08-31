@@ -1,6 +1,4 @@
-# vim: sw=2 ts=2 et :
 ---
-# Install packages
 - name: install tree packages
   package:
     name: "{{ tree_packages }}"

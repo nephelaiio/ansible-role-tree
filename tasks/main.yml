@@ -4,5 +4,3 @@
     name: "{{ tree_packages }}"
     state: "{{ tree_packages_state }}"
   become: yes
-  tags:
-    - tree

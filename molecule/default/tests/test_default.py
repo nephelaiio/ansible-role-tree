@@ -6,5 +6,5 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-def test_command(Command):
-    assert Command('tree --version').rc == 0
+def test_command(host):
+    assert host.command('tree --version').rc == 0

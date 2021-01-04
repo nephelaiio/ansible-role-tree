@@ -1,7 +1,6 @@
 ---
 - name: enable ubuntu universe repository
-  command:
-    update_cache: yes
+  command: add-apt-repository universe
   when: (ansible_distribution | lower) == 'ubuntu'
   tags:
     - skip_ansible_lint

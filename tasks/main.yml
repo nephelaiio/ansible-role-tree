@@ -1,4 +1,11 @@
 ---
+- name: enable ubuntu universe repository
+  command:
+    update_cache: yes
+  when: (ansible_distribution | lower) == 'ubuntu'
+  tags:
+    - skip_ansible_lint
+
 - name: install tree packages
   package:
     name: "{{ tree_packages }}"

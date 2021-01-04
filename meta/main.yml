@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: tree
   author: Ted Cook
   description: An Ansible role to install and configure tree
   license: MIT
@@ -7,17 +8,15 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 6
         - 7
-    - name: Archlinux
-      versions:
-        - all
     - name: Ubuntu
       versions:
+        - focal
+        - bionic
         - xenial
     - name: Debian
       versions:
-        - stretch
+        - buster
   galaxy_tags:
     - tree
 
